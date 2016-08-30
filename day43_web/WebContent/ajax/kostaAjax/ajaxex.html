@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#btn1').click(function(){
+					$.ajax({
+						url: 'date.jsp',
+						
+						success: function(result){
+							$('#result').html(result);
+						},
+						error: function(e) {
+							alert(e);
+						}
+					});
+				});
+			});	
+		</script>
+	</head>
+		
+	<body>
+		<div data-role="page" id="page">
+			<div data-role="header">
+				<h1>날짜를 보자</h1>
+			</div>
+					<p style="text-align: right;" data-role="navbar">
+						<a href="#" data-icon="arrow-u" class="ui-btn" id="btn1">날짜확인</a>
+					</p>
+				</form>
+	
+				<div data-role="fieldcontain">
+					<p align="center"><label><b>결과</b></label></p>
+					<textarea rows="15" cols="10" id="result" readonly="readonly"></textarea>
+				</div>
+			</div>
+
+			<div data-role="footer">
+				<h3>과제입니다</h3>
+			</div>
+		</div>
+	</body>
+</html>
